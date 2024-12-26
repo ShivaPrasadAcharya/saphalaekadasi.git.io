@@ -20,13 +20,17 @@ const utils = {
     },
 
     generateDataJSCode: (entry) => {
-        const template = `    {
-        id: ${entry.id},
-        sharedTerms: ${JSON.stringify(entry.sharedTerms)},
-        content: ${JSON.stringify(entry.content)},
-        dateCreated: '${entry.dateCreated}',
-        dateModified: '${entry.dateModified}'
-    }`;
+        const template = `// Add this entry to data.js
+const newEntry = {
+    id: ${entry.id},
+    sharedTerms: ${JSON.stringify(entry.sharedTerms)},
+    content: ${JSON.stringify(entry.content)},
+    dateCreated: '${entry.dateCreated}',
+    dateModified: '${entry.dateModified}'
+};
+
+// Add to dictionaryData array
+dictionaryData.push(newEntry);`;
         return template;
     },
 
