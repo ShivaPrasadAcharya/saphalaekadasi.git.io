@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cumulative Dictionary</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cumulative Dictionary</h1>
+        <div class="header-controls">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search terms...">
+                <button id="searchButton">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </button>
+            </div>
+            <a href="#entryForm" class="add-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"/>
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                Add New Entry
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="dictionaryContent" class="dictionary-content">
+            <!-- Cards will be dynamically inserted here -->
+        </section>
+
+        <section id="formSection" class="form-section">
+            <h2>New Entry</h2>
+            <form id="entryForm">
+                <div class="form-group">
+                    <label for="terms">Shared Terms (comma-separated):</label>
+                    <input type="text" id="terms" required>
+                </div>
+                <div class="form-group">
+                    <label for="content">Content:</label>
+                    <textarea id="content" required></textarea>
+                </div>
+                <div class="form-controls">
+                    <button type="button" id="previewBtn">Preview</button>
+                    <button type="submit" id="saveBtn">Save</button>
+                    <button type="button" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+            <div id="codeOutput" class="code-output">
+                <h3>Generated Code</h3>
+                <pre><code id="generatedCode"></code></pre>
+                <button id="copyCode" class="copy-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    Copy Code
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script src="card.js"></script>
+    <script src="search.js"></script>
+    <script src="form.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
