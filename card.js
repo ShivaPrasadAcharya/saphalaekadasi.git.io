@@ -44,7 +44,10 @@ const card = {
             document.getElementById('terms').value = entry.sharedTerms.join(', ');
             document.getElementById('content').value = entry.content;
             document.getElementById('entryForm').dataset.editId = id;
-            utils.scrollToForm();
+            form.show();
+            // Generate code for the current entry
+            const codeOutput = utils.generateDataJSCode(entry);
+            document.getElementById('generatedCode').textContent = codeOutput;
         }
     },
 
