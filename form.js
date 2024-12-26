@@ -1,5 +1,19 @@
 const form = {
+    show: () => {
+        document.getElementById('formSection').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    },
+
+    hide: () => {
+        document.getElementById('formSection').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    },
+
     init: () => {
+        // Add click handler for overlay
+        document.getElementById('overlay').addEventListener('click', form.hide);
         const entryForm = document.getElementById('entryForm');
         const previewBtn = document.getElementById('previewBtn');
         const cancelBtn = document.getElementById('cancelBtn');
